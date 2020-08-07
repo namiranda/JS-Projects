@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: 'Roboto Mono', monospace;
 }
 
 main {
@@ -12,6 +13,13 @@ main {
 
 h2 {
     font-size: 3.5rem;
+    text-align: center;
+}
+
+h2 span {
+    border: black 4px solid;
+    border-radius: 1.5rem;
+    padding: 0px 20px;
 }
 
 button {
@@ -20,8 +28,19 @@ button {
     font-size: 1rem;
     border-radius: 10px;
     cursor: pointer;
+    font-weight: 600;
+}
+
+button:focus {
+    outline: none;
 }
 
 .color {
     background-color: #a280c2;
+}
+
+@media screen and (max-width: 380px) {
+    h2 {
+        font-size: 2rem;
+    }
 }
