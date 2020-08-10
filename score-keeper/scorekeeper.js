@@ -2,6 +2,7 @@ const buttonP1 = document.querySelector("#p1");
 const buttonP2 = document.querySelector("#p2");
 const displayP1 = document.querySelector("#displayP1");
 const displayP2 = document.querySelector("#displayP2");
+const btnReset = document.querySelector("#reset");
 
 const maxScore = 5;
 let gameOver = false;
@@ -32,8 +33,17 @@ function addScoreP2() {
     displayP2.textContent = scoreP2;
 }
 
+function reset(){
+    scoreP1 = 0;
+    scoreP2 = 0;
+    displayP1.textContent = scoreP1;
+    displayP2.textContent = scoreP2;
+    gameOver = false;
+}
+
 buttonP1.addEventListener("click", addScoreP1);
 buttonP2.addEventListener("click", addScoreP2);
+btnReset.addEventListener("click", reset);
 
 //TODO:
 //Implementar reset
