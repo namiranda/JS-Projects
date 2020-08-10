@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    background: #C6FFDD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
+    width: 30%;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    -webkit-box-shadow: 3px 31px 78px -23px rgba(0,0,0,1);
+    -moz-box-shadow: 3px 31px 78px -23px rgba(0,0,0,1);
+    box-shadow: 3px 31px 78px -23px rgba(0,0,0,1);
+}
+
+main{
+    background-color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border-radius: 1rem;
+    -webkit-box-shadow: 3px 31px 78px -23px rgba(0,0,0,1);
+-moz-box-shadow: 3px 31px 78px -23px rgba(0,0,0,1);
+box-shadow: 3px 31px 78px -23px rgba(0,0,0,1);
+}
+input + div{
+    width: 80%;
+}
+button{
+    text-transform: uppercase;
+    float: left;
+    box-sizing:border-box;
+    margin-bottom: 10px;
+    padding: 1rem 2rem;
+    background-color: #ff5ca3;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    -webkit-box-shadow: 4px 7px 52px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 7px 52px -15px rgba(0,0,0,0.75);
+    box-shadow: 4px 7px 52px -15px rgba(0,0,0,0.75);
+    cursor: pointer;
+    width: 48%;
+    align-self: center;
+}
+button:active{
+    outline: none;
+}
+
+input{
+    border-radius: 2rem;
+    height: 2rem;
+    margin: 5px;
+    width: 80%;
+}
+#reset{
+    width: 80%;
+}
