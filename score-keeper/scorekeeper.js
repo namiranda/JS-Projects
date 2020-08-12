@@ -3,8 +3,10 @@ const buttonP2 = document.querySelector("#p2");
 const displayP1 = document.querySelector("#displayP1");
 const displayP2 = document.querySelector("#displayP2");
 const btnReset = document.querySelector("#reset");
+const numInput = document.querySelector("input");
+const displayMaxScore = document.querySelector("h2 span");
 
-const maxScore = 5;
+let maxScore = 5;
 let gameOver = false;
 
 let scoreP1 = 0;
@@ -48,8 +50,8 @@ function reset(){
 buttonP1.addEventListener("click", addScoreP1);
 buttonP2.addEventListener("click", addScoreP2);
 btnReset.addEventListener("click", reset);
-
-//TODO:
-//Implementar reset
-//Parar cuando uno llegue al maximo
-//Implementar el ingreso por teclado
+numInput.addEventListener("change", function() {
+    maxScore = parseInt(this.value);
+    displayMaxScore.textContent = this.value;
+    reset();
+})
