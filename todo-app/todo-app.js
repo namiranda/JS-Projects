@@ -10,5 +10,6 @@ function createTodo(){
     console.log(todos);
     console.log(todos.length);
     todoSection.innerHTML += todos[todos.length-1];
+    newTodo.value = "";
 }
 newTodo.addEventListener("change", createTodo);  
