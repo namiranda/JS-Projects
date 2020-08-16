@@ -3,51 +3,47 @@ const todoSection = document.querySelector("section");
 const counterDisplay = document.querySelector("#counter");
 let todoCheckbox;
 
-let todos = []; 
+let todos = [];
 let counter = 0;
 
-function createTodo(){
-    console.log("new todo");
+function createTodo() {
     let todo = newTodo.value;
-    console.log(todo);
-    todos.push('<div><input type="checkbox" class="todos" name="" id="">' + todo + ' <button class="remove">remove</button></div>');
+    todos.push('<div class="todo"><input type="checkbox" class="todos" name="" id="">' + todo + ' <button class="remove">remove</button></div>');
     console.log(todos);
     console.log(todos.length);
-    todoSection.innerHTML += todos[todos.length-1];
+    todoSection.innerHTML += todos[todos.length - 1];
     newTodo.value = "";
     counter++;
     updateDisplayCounter();
-    
+
     todoCheckbox = document.querySelectorAll(".todos");
     todoCheckbox.forEach(checkbox => {
-        checkbox.addEventListener("change", function(){
+        checkbox.addEventListener("change", function() {
 
-            if(checkbox.checked){
+            if (checkbox.checked) {
                 counter--;
-            }else counter++;
+            } else counter++;
             updateDisplayCounter();
         })
     });
 
-    btnRemove = document.querySelectorAll(".remove");
+    let todoList = document.querySelectorAll(".todo")
+    let btnRemove = document.querySelectorAll(".remove");
+    console.log("bot: " + btnRemove.length);
     btnRemove.forEach((button, index) => {
-        button.addEventListener("click", function(){
-            console.log(todos[index])
-            let aux = String(todoSection.innerHTML);
-            todoSection.innerHTML = aux.replace(todos[index], " ");
+        button.addEventListener("click", function() {
+
+            todoSection.removeChild(todoList[index]);
             counter--;
             updateDisplayCounter();
-            todos.splice(index,1);
-            console.log(todoSection.innerHTML);
-            console.log(todos);
+            todos.splice(index, 1);
+
         })
     });
 }
 
-function updateDisplayCounter(){
+function updateDisplayCounter() {
     counterDisplay.textContent = counter;
 }
 
 newTodo.addEventListener("change", createTodo);
-
-
