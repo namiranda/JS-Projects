@@ -1,7 +1,11 @@
 const newTodo = document.querySelector("#new");
 const todoSection = document.querySelector("section");
 const counterDisplay = document.querySelector("#counter");
+const filterCheckbox = document.querySelector("#filter");
+
 let todoCheckbox;
+let todoList;
+let btnRemove;
 
 let todos = [];
 let counter = 0;
@@ -9,17 +13,19 @@ let counter = 0;
 function createTodo() {
     let todo = newTodo.value;
     todos.push('<div class="todo"><input type="checkbox" class="todos" name="" id="">' + todo + ' <button class="remove">remove</button></div>');
-    console.log(todos);
-    console.log(todos.length);
     todoSection.innerHTML += todos[todos.length - 1];
     newTodo.value = "";
     counter++;
     updateDisplayCounter();
 
-    todoCheckbox = document.querySelectorAll(".todos");
-    todoCheckbox.forEach(checkbox => {
+    todoList = document.querySelectorAll(".todo") //divs
+    btnRemove = document.querySelectorAll(".remove"); //buttons
+    todoCheckbox = document.querySelectorAll(".todos"); //checkboxes 
+
+    todoCheckbox.forEach((checkbox, index) => {
         checkbox.addEventListener("change", function() {
 
+            todoList[index].classList.toggle("done");
             if (checkbox.checked) {
                 counter--;
             } else counter++;
@@ -27,9 +33,6 @@ function createTodo() {
         })
     });
 
-    let todoList = document.querySelectorAll(".todo")
-    let btnRemove = document.querySelectorAll(".remove");
-    console.log("bot: " + btnRemove.length);
     btnRemove.forEach((button, index) => {
         button.addEventListener("click", function() {
 
@@ -47,4 +50,13 @@ function updateDisplayCounter() {
     counterDisplay.textContent = counter;
 }
 
+function hideDone() {
+    let done = document.querySelectorAll(".done");
+
+    done.forEach(todoDiv => {
+        todoDiv.classList.toggle("hidden");
+    });
+}
+
 newTodo.addEventListener("change", createTodo);
+filterCheckbox.addEventListener("click", hideDone);
