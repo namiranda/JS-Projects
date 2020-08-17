@@ -34,7 +34,8 @@ function createTodo() {
         button.addEventListener("click", function() {
 
             todoSection.removeChild(todoList[index]);
-            counter--;
+            if (!todoCheckbox[index].checked) //Si no esta selecionado, restar al counter
+                counter--;
             updateDisplayCounter();
             todos.splice(index, 1);
 
