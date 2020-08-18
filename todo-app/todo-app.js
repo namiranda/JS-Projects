@@ -2,6 +2,7 @@ const newTodo = document.querySelector("#new");
 const todoSection = document.querySelector("section");
 const counterDisplay = document.querySelector("#counter");
 const filterCheckbox = document.querySelector("#filter");
+const filterInput = document.querySelector("#filter-input");
 
 let todoCheckbox;
 let todoList;
@@ -58,5 +59,16 @@ function hideDone() {
     });
 }
 
+function filterTodos(){ //deberia refactorizar esto
+    todoList.forEach((todo, index) => {
+        if(!todo.textContent.includes(filterInput.value)){
+            todo.classList.add("hidden");
+        }else if(filterCheckbox.checked && !todoCheckbox[index].checked)
+             todo.classList.remove("hidden");
+        else todo.classList.remove("hidden");
+    });
+}
+
 newTodo.addEventListener("change", createTodo);
 filterCheckbox.addEventListener("click", hideDone);
+filterInput.addEventListener("change", filterTodos);
