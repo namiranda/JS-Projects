@@ -1,5 +1,5 @@
 const newTodo = document.querySelector("#new");
-const todoSection = document.querySelector("section");
+const todoSection = document.querySelector("#list");
 const counterDisplay = document.querySelector("#counter");
 const filterCheckbox = document.querySelector("#filter");
 const filterInput = document.querySelector("#filter-input");
@@ -13,7 +13,7 @@ let counter = 0;
 
 function createTodo() {
     let todo = newTodo.value;
-    todos.push('<div class="todo"><input type="checkbox" class="todos" name="" id="">' + todo + ' <button class="remove">remove</button></div>');
+    todos.push('<div class="todo my-2 px-2"><input type="checkbox" class="todos" name="" id=""> ' + todo + ' <button class="remove btn btn-link">remove</button></div>');
     todoSection.innerHTML += todos[todos.length - 1];
     newTodo.value = "";
     counter++;

@@ -1,3 +1,20 @@
+body{
+    background-color: #f8dae2;
+    font-family: 'Alata', sans-serif;
+}
+header{
+    background-color: #b57fB3;
+    color: #fdf2f0;
+    
+}
+header h1{
+    font-family: 'Fredericka the Great', cursive;
+}
 .hidden {
     display: none;
+}
+
+.todo{
+    border: black 1px solid;
+    background-color: #fdf2f0;
 }

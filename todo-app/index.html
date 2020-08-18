@@ -4,25 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Todos-app</title>
 </head>
 
 <body>
-    <header>
+    <header class="text-center p-3">
         <h1>To-do App</h1>
         <h2>What do you need to do?</h2>
     </header>
 
-    <main>
+    <main class="d-flex flex-column p-5 mx-sm-5">
+        <section>
         <input type="text" placeholder="Filter todos" id="filter-input">
         <input type="checkbox" name="filter" id="filter">
-        <p>Hide completed</p>
+        <p class="d-inline">Hide completed</p>   
+        </section>
+        
         <h3>You have <span id="counter">0</span> todo left</h3>
-        <section>
+        <section id="list">
         </section>
         <input type="text" name="new" id="new" placeholder="New Todo">
-        <input type="submit" value="Submit">
+        <input class="my-2" type="submit" value="Submit">
     </main>
 
     <script src="todo-app.js"></script>
